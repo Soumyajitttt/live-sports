@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getMatches, postMatches, updateScore} from '../controllers/matches.controller.js';
+import { getMatches, postMatches, updateScore } from '../controllers/matches.controller.js';
 
 const router = Router();
 
