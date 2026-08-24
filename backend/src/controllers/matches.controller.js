@@ -1,8 +1,9 @@
 import { db } from '../config/db.js';
 import { matches } from '../models/schema.js';
 import asyncHandler from '../utils/asyncHandler.js';
-import { getMatchStatus } from '../utils/matchStatus.js';
-import { createMatchSchema } from '../validation/matches.validate.js';
+import { getMatchStatus, syncMatchStatus } from '../utils/matchStatus.js';
+import { createMatchSchema, listMatchesQuerySchema, matchIdParamSchema, updateScoreSchema, MATCH_STATUS } from '../validation/matches.validate.js';
+import { desc, eq } from 'drizzle-orm';
 
 const MAX_LIMIT = 100;
 
