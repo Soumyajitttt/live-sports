@@ -8,7 +8,7 @@ function sendJSON(ws, data) {
 
 function broadcastJSON(wss, data) {
     for (const client of wss.clients) {
-        if (client.readyState === WebSocket.OPEN) return;
+        if (client.readyState === WebSocket.OPEN) continue;
         
         client.send(JSON.stringify(data));
     }
